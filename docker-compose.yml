@@ -1,0 +1,11 @@
+services:
+  gear-bench:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: gear-matching-bench:latest
+    container_name: gear-matching-bench
+    ports:
+      # 宿主机 8080 -> 容器 80
+      - "8080:80"
+    restart: unless-stopped
